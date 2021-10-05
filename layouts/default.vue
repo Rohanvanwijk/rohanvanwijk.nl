@@ -1,7 +1,8 @@
 <template>
-  <div class="wrapper">
+  <div class="wrap">
     <Header />
     <nuxt />
-    <ColorModePicker />
   </div>
 </template>
+<style lang="scss">
+</style>

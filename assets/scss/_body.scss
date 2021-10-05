@@ -1,0 +1,47 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: $body-font-size;
+    background-color: var(--background-color);
+    color: var(--body-text-color);
+    margin: 0;
+}
+
+a {
+    color: $color-secondary;
+
+    &:visited {
+        color: $color-tertiary;
+    }
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+.wrap {
+    max-width: $wrap-size;
+    margin: 0 auto;
+    padding: 0 $wrap-padding;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+}
+
+.dark {
+    --background-color: #{$background-color-dark};
+    --body-text-color: #{$dark-contrast-color};
+}
+
+.light {
+    --background-color: #{$background-color-light};
+    --body-text-color: #{$light-contrast-color};
+}
+
+.block-spacing {
+    margin-bottom: $spacer-xl;
+}
