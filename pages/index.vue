@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="intro block-spacing">
+    <section class="intro block-spacing" :style="{ transform: `rotate(${r}deg)` }">
       <h1 class="title text-center">{{ homeData.title }}</h1>
       <div class="skills">
         <div class="intro__image">
@@ -12,7 +12,7 @@
       </div>
     </section>
 
-    <section class="mt-8">
+    <section class="mt-8" @mousemove="updateStyle($event)">
       <h2 class="text-primary-600 dark:text-primary-400 max-w-5xl mx-auto">Recent blog post</h2>
       <posts post-type="blog" :amount="3" />
     </section>
@@ -25,7 +25,17 @@ export default {
   data() {
     return {
       homeData,
+      r: 0,
     }
+  },
+  methods: {
+    updateStyle(event) {
+      if (event.screenX < 450) {
+        this.r = event.screenX * -0.01
+      } else {
+        this.r = event.screenX * 0.01
+      }
+    },
   },
 }
 </script>
@@ -36,6 +46,7 @@ export default {
   align-items: center;
   border: 1px dashed $color-tertiary;
   padding: $spacer-md;
+  transition: transform 500ms ease;
   &__list {
     list-style-type: '\1F525';
   }
