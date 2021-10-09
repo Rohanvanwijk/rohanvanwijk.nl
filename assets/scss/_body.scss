@@ -25,6 +25,10 @@ a {
     max-width: $wrap-size;
     margin: 0 auto;
     padding: 0 $wrap-padding;
+
+    &--wide {
+        max-width: $wrap-size * 2;
+    }
 }
 
 .list-reset {

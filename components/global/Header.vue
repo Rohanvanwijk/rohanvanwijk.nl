@@ -22,17 +22,28 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
+  $self: &;
   &__list {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+
+    &-item {
+      &:first-child {
+        #{$self}__link {
+          padding-left: 0;
+        }
+      }
+      &:last-child {
+        #{$self}__link {
+          padding-right: 0;
+        }
+      }
+    }
   }
   &__link {
     display: block;
-    padding: $spacer-md;
-    &:last-child {
-      padding-right: 0;
-    }
+    padding: $spacer-xl * 2;
   }
 }
 </style>
